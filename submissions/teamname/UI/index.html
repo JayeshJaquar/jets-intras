@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TokenTrend</title>
+    <link rel="stylesheet" href="dash_board.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div id="div1">
+    <div class="nav-container">
+
+        <div id="logo">
+            <img src="icon.jpg" alt="logo">
+            <span>TokenTrend</span>
+        </div>
+
+        <div id="nav-buttons">
+            <button id="div2" class="class2">HOME</button>
+            <button id="div3" class="class2">MARKET</button>
+            <button id="div5" class="class2">SEARCH</button>
+            <button id="div6" class="class2">FOOTER</button>
+            <button id="div7" class="class2">DETAILS</button>
+        </div>
+
+    </div>
+</div>
+
+<!-- HERO -->
+<div id="hometitle">
+    <p id="p1">Machine Learning Meets</p>
+    <p id="p2">Crypto Momentum</p>
+</div>
+
+<div id="about">
+    <p class="about-text">AI-powered crypto insights with real-time data.</p>
+    <p class="about-text">Analyze trends, predict movements, stay ahead.</p>
+</div>
+
+<!-- SEARCH -->
+<div class="search" id="search">
+    <input id="input" type="text" placeholder="Search Bitcoin, Ethereum...">
+    <div id="suggestions" class="suggestion-box"></div>
+    <button id="buttonid">Search</button>
+</div>
+
+<!-- TABLE -->
+<p id="ai-note">Showing AI-supported cryptocurrencies only</p>
+<div id="table" class="table">
+    <table class="crypto-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Coin</th>
+                <th>Price</th>
+                <th>24H</th>
+                <th>Market Cap</th>
+                <th>Prediction</th>
+            </tr>
+        </thead>
+        <tbody id="market-body"></tbody>
+    </table>
+</div>
+
+<!-- FOOTER -->
+<div id="footer">
+    <p>© 2026 TokenTrend</p>
+    <div class="footer-links">
+        <span>Terms</span>
+        <span>Privacy</span>
+        <span>Cookies</span>
+        <span>Data</span>
+    </div>
+    <div id="social_links">
+        <img src="insta.png">
+        <img src="linkedin.png">
+        <img src="github.png">
+    </div>
+</div>
+
+<script src="crypto.js"></script>
+
+</body>
+</html>
