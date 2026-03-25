@@ -1,8 +1,0 @@
-{
-  "weights": {
-    "sma_7": 0.45,
-    "volatility": -1.2,
-    "daily_return": 0.85
-  },
-  "bias": 0.02
-}

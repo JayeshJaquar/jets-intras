@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Details - TokenTrend</title>
+    <link rel="stylesheet" href="dash_board.css">
+    <style>
+        .details-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #444;
+        }
+        .prediction-box {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            text-align: center;
+            padding: 20px;
+            background: #1a1a1a;
+            border-radius: 8px;
+        }
+        .accuracy-badge {
+            color: #00ffcc;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="details-container" id="details-content">
+    <h1 id="coin-title">Loading...</h1>
+    <div id="prediction-display" class="prediction-box">--</div>
+
+    <div class="data-row">
+        <span>Current Price</span>
+        <span id="curr-price">$0.00</span>
+    </div>
+    <div class="data-row">
+        <span>Market Cap</span>
+        <span id="m-cap">$0</span>
+    </div>
+    <div class="data-row">
+        <span>Volatility (Calculated)</span>
+        <span id="volatility">--</span>
+    </div>
+    <div class="data-row">
+        <span>Model Accuracy</span>
+        <span id="model-accuracy" class="accuracy-badge">--</span>
+    </div>
+    <div class="data-row">
+        <span>24H High</span>
+        <span id="high-24">$0</span>
+    </div>
+    <div class="data-row">
+        <span>24H Low</span>
+        <span id="low-24">$0</span>
+    </div>
+    <div class="data-row">
+    <span>Market Momentum</span>
+    <span id="det-momentum">--</span>
+</div>
+<div class="data-row">
+    <span>AI Target Price</span>
+    <span id="det-predicted-price" style="color: #bc8cf2; font-weight: bold;">$0.00</span>
+</div>
+<div class="chart-container">
+    <canvas id="priceChart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <button onclick="window.history.back()" style="margin-top:20px; padding:10px; cursor:pointer;">Go Back</button>
+</div>
+
+<script src="details.js"></script>
+</body>
+</html>

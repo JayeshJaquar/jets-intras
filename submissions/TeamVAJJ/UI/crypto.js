@@ -2,24 +2,51 @@ let currentCurrency = "USD";
 let allCoins = [];
 let models = {};
 
-/* ---------------- NAVIGATION ---------------- */
 function handleNavClick(id, target){
     document.getElementById(id).onclick = () => {
         document.getElementById(target).scrollIntoView({behavior:"smooth"});
     };
 }
-
+document.getElementById("terms").addEventListener("click", () => {
+    
+  
+    setTimeout(() => {
+        window.location.href = "terms.html";
+    }, 150);
+});
+document.getElementById("privacy").addEventListener("click", () => {
+    
+  
+    setTimeout(() => {
+        window.location.href = "privacy.html";
+    }, 150);
+});
+document.getElementById("cookies").addEventListener("click", () => {
+    
+  
+    setTimeout(() => {
+        window.location.href = "cookie.html";
+    }, 150);
+});
+document.getElementById("data").addEventListener("click", () => {
+    
+  
+    setTimeout(() => {
+        window.location.href = "data_sources.html";
+    }, 150);
+});
+document.getElementById('div7').addEventListener('click', function(e) {
+   
+    e.preventDefault();
+        alert("Please search for a coin first!");
+    
+});
 handleNavClick("div2","hometitle");
 handleNavClick("div3","table");
-handleNavClick("div5","search");
+handleNavClick("div5","hometitle");
 handleNavClick("div6","footer");
 
-/* DETAILS PAGE */
-document.getElementById("div7").onclick = () => {
-    window.location.href="coin-details.html";
-};
 
-/* ---------------- LOAD MODEL ---------------- */
 async function loadModel(){
     try{
         const res = await fetch("model_data.json");
@@ -30,7 +57,7 @@ async function loadModel(){
     }
 }
 
-/* ---------------- FEATURE CREATION ---------------- */
+
 function createFeatures(coin){
     const change = (coin.price_change_percentage_24h || 0) / 100;
 
@@ -44,7 +71,7 @@ function createFeatures(coin){
     ];
 }
 
-/* ---------------- PREDICTION ---------------- */
+
 function predictCoin(coin){
     try{
         const modelKey = Object.keys(models).find(
@@ -83,7 +110,9 @@ function predictCoin(coin){
     }
 }
 
-/* ---------------- FETCH MARKET DATA ---------------- */
+
+
+
 async function fetchMarketData(currency="USD"){
     const table=document.getElementById("market-body");
     const apiCurrency=currency.toLowerCase();
@@ -99,7 +128,7 @@ async function fetchMarketData(currency="USD"){
         const data=await res.json();
         allCoins=data;
 
-        /* 🔥 FILTER ONLY AI-SUPPORTED COINS */
+        
         const filteredData = data.filter(coin => {
             const modelKey = Object.keys(models).find(
                 key => key.toLowerCase() === coin.name.toLowerCase().replace(/\s/g,'')
@@ -147,7 +176,7 @@ async function fetchMarketData(currency="USD"){
     }
 }
 
-/* ---------------- SEARCH ---------------- */
+
 const input=document.getElementById("input");
 const suggestions=document.getElementById("suggestions");
 
@@ -178,19 +207,28 @@ input.oninput=()=>{
     });
 };
 
-/* ---------------- SEARCH BUTTON ---------------- */
-document.getElementById("buttonid").onclick=()=>{
-    const q=input.value.toLowerCase();
-    const coin=allCoins.find(c=>c.name.toLowerCase()===q);
+document.getElementById("buttonid").onclick = () => {
+    const query = input.value.trim().toLowerCase();
+    
+   
+    const foundCoin = allCoins.find(c => 
+        c.name.toLowerCase() === query || 
+        c.id.toLowerCase() === query
+    );
 
-    if(coin){
-        window.location.href=`coin-details.html?id=${coin.id}`;
-    } 
-    else alert("Select valid coin");
+    if (foundCoin) {
+      
+        window.location.href = `coin-details.html?coin=${foundCoin.id}`;
+    } else {
+        alert("Coin not found. Please select a valid coin from the suggestions.");
+    }
 };
 
-/* ---------------- INIT ---------------- */
+
 window.onload=async ()=>{
     await loadModel();
     await fetchMarketData();
 };
+
+
+   
