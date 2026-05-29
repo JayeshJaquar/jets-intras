@@ -9,7 +9,7 @@
 
 ## 🔗 Project Links
 * **PPT link:** [add link for ppt explaining your solution]
-* **Hosted Demo:** [https://julliet-mohanta.github.io/Team_Vajj/]
+* **Hosted Demo:** https://julliet-mohanta.github.io/Team_Vajj/
 
 ## Technical Implementation
 
