@@ -9,7 +9,7 @@
 
 ## 🔗 Project Links
 * **PPT link:** [add link for ppt explaining your solution]
-* **Hosted Demo:** [Link to live app, e.g., Vercel or Netlify]
+* **Hosted Demo:** [https://julliet-mohanta.github.io/Team_Vajj/]
 
 ## Technical Implementation
 
